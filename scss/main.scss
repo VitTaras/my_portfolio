@@ -51,7 +51,7 @@ main {
       padding: 0.4rem;
       &:hover {
         color: $secondary-color;
-        @include ease-out();
+        @include ease-out;
       }
     }
   }
@@ -98,6 +98,71 @@ main {
     border-bottom: $secondary-color 5px solid;
   }
 }
+
+// Work/Projects
+.projects {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include ease-out;
+    }
+  }
+}
+// Contact Page
+.contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include ease-out;
+    &:hover {
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      padding: 0.5rem 1.5rem;
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
